@@ -68,7 +68,7 @@ namespace WinformApp
                 {
                     // 收到了关闭连接的消息，断开连接
                     // 被动关闭连接
-                    CloseConnection(client, result.CloseStatus.Value, result.CloseStatusDescription);
+                    await CloseConnection(client, result.CloseStatus.Value, result.CloseStatusDescription);
                     break;
                 }
 

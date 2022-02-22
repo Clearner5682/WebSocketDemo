@@ -27,6 +27,11 @@ namespace WebApp1
         {
             services.AddControllers();
             services.AddSingleton<WebSocketManager>();
+
+            services.AddSingleton(new MySocketServer("127.0.0.1",5008));
+
+            // 注入一个IHostedService用来监听TCP请求
+            services.AddHostedService<MySocketService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
